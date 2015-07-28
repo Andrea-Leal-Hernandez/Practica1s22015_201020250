@@ -16,6 +16,15 @@ public class Juego extends javax.swing.JFrame {
      */
     public Juego() {
         initComponents();
+        
+      Game ta = new Game();
+      this.add(ta);
+     Hongos hu = new Hongos();
+      hu.loadImage("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\carre2.png");
+       
+        
+        
+        
     }
 
     /**
@@ -36,23 +45,22 @@ public class Juego extends javax.swing.JFrame {
             }
         });
 
-        personaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mario.png"))); // NOI18N
+        personaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mario_1.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(311, 311, 311)
                 .addComponent(personaje)
-                .addContainerGap(390, Short.MAX_VALUE))
+                .addGap(0, 870, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(209, 209, 209)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(476, Short.MAX_VALUE)
                 .addComponent(personaje)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
 
         pack();
@@ -64,15 +72,13 @@ public class Juego extends javax.swing.JFrame {
         int y = personaje.getY();
         
         if (evt.getKeyChar() == 'a'){
-            x = x+2;
+            x = x+3;
             personaje.setLocation(x, y);
         }
         if (evt.getKeyChar() == 'd'){
-            x= x-2;
+            x= x-3;
             personaje.setLocation(x, y);
-        }
-        
-        
+        }     
     }//GEN-LAST:event_formKeyPressed
 
     /**
