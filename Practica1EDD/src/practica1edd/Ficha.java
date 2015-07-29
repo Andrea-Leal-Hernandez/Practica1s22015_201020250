@@ -7,16 +7,13 @@ package practica1edd;
 
 import java.awt.Image;
 import java.awt.Rectangle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 /**
  *
  * @author Andrea
  */
-public class Hongos {
-    
+public class Ficha {
     int x;
     int y;
     int width;
@@ -55,12 +52,10 @@ public class Hongos {
     }
 
     public int getX() {
-        return x;
+        return x+60;
     }
 
     public int getY() {
-        return y;
+        return y+60;
     }
-    
-    
 }

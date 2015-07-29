@@ -19,11 +19,8 @@ public class Juego extends javax.swing.JFrame {
         
       Game ta = new Game();
       this.add(ta);
-     Hongos hu = new Hongos();
-      hu.loadImage("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\carre2.png");
-       
-        
-        
+     
+     
         
     }
 
@@ -36,8 +33,6 @@ public class Juego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        personaje = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -45,22 +40,15 @@ public class Juego extends javax.swing.JFrame {
             }
         });
 
-        personaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mario_1.png"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(personaje)
-                .addGap(0, 870, Short.MAX_VALUE))
+            .addGap(0, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(476, Short.MAX_VALUE)
-                .addComponent(personaje)
-                .addGap(94, 94, 94))
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         pack();
@@ -68,17 +56,7 @@ public class Juego extends javax.swing.JFrame {
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
-        int x = personaje.getX();
-        int y = personaje.getY();
-        
-        if (evt.getKeyChar() == 'a'){
-            x = x+3;
-            personaje.setLocation(x, y);
-        }
-        if (evt.getKeyChar() == 'd'){
-            x= x-3;
-            personaje.setLocation(x, y);
-        }     
+           
     }//GEN-LAST:event_formKeyPressed
 
     /**
@@ -120,6 +98,5 @@ public class Juego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel personaje;
     // End of variables declaration//GEN-END:variables
 }
