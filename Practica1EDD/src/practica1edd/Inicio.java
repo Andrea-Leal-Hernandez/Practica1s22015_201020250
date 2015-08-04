@@ -67,8 +67,8 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          Juego ca = new Juego();
-          ca.show();
+         Cargar ca = new Cargar();
+          ca.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

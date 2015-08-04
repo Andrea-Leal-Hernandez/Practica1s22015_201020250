@@ -16,9 +16,9 @@ public class Juego extends javax.swing.JFrame {
      */
     public Juego() {
         initComponents();
-        
-      Game ta = new Game();
-      this.add(ta);
+        Game ga = new Game();
+        this.add(ga);
+
      
      
         
