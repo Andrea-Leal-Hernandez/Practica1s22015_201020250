@@ -22,6 +22,7 @@ public class Cargar extends javax.swing.JFrame {
      */
     public Cargar() {
         initComponents();
+        
     }
 
     /**
@@ -231,9 +232,10 @@ public class Cargar extends javax.swing.JFrame {
 
     private void JmarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmarioActionPerformed
         // TODO add your handling code here:
+        ListaDoble listaD = new ListaDoble();
         this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\mariopp.jpg",
             "MARIO", this.jtmario);
-    listaD.agregarAlInicio(new Elemento(this.jtmario.getText(),"MARIO"));
+    listaD.AgregaralInicio(new Elemento(this.jtmario.getText(),"MARIO"));
     }//GEN-LAST:event_JmarioActionPerformed
 
     public void agregar(String ruta, String tipoObj, JTextField cuadro)
@@ -277,15 +279,7 @@ public class Cargar extends javax.swing.JFrame {
     
 }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     /**
