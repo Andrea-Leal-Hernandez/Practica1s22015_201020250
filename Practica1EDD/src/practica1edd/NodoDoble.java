@@ -5,24 +5,36 @@
  */
 package practica1edd;
 
+import java.awt.MouseInfo;
+import java.awt.Point;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Andrea
  */
-public class NodoDoble {
-    public int dato;
+public class NodoDoble extends JLabel {
+    Elemento es;
     NodoDoble siguiente, anterior;
     
-    public NodoDoble(int el)
+    public NodoDoble(Elemento el)
     {
         this(el,null,null);
     }
     
-    public NodoDoble(int el, NodoDoble s, NodoDoble a)
+    public NodoDoble(Elemento el, NodoDoble s, NodoDoble a)
     {
-        dato = el;
+        es = el;
         siguiente = s;
         anterior = a;
+        
+        
+    }
+    
+    public void puntoMouse(NodoDoble nodo){
+       Point po = MouseInfo.getPointerInfo().getLocation();
+       System.out.println(po);
+       nodo.setLocation(po.x-1, po.y-1);
     }
     
     

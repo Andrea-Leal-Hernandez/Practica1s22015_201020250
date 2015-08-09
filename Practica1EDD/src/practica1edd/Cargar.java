@@ -6,10 +6,17 @@
 package practica1edd;
 
 import java.awt.Dimension;
+import java.io.File;
+import java.io.PrintWriter;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 /**
  *
@@ -23,7 +30,23 @@ public class Cargar extends javax.swing.JFrame {
     public Cargar() {
         initComponents();
         
+        JScrollPane es = new JScrollPane();
+        es.setBounds(20,20,700,450);
+        es.setViewportView(this.jPanel1);
+        es.getViewport().setView(this.jPanel1);
+        getContentPane().add(es);
+        this.setBounds(50, 50, 1200, 600);
+  
     }
+    
+     int contador=1;
+     boolean a = true;
+     boolean c = true;
+     static ListaDoble listaD = new ListaDoble();
+     
+     
+     
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,7 +58,6 @@ public class Cargar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollBar1 = new javax.swing.JScrollBar();
         jPanel2 = new javax.swing.JPanel();
         Jmario = new javax.swing.JButton();
         Jficha = new javax.swing.JButton();
@@ -57,21 +79,17 @@ public class Cargar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setToolTipText("");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(896, Short.MAX_VALUE)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 891, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         Jmario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mariopp.jpg"))); // NOI18N
@@ -82,18 +100,53 @@ public class Cargar extends javax.swing.JFrame {
         });
 
         Jficha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/monedap.png"))); // NOI18N
+        Jficha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JfichaActionPerformed(evt);
+            }
+        });
 
         Jhongo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hongop.jpg"))); // NOI18N
+        Jhongo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JhongoActionPerformed(evt);
+            }
+        });
 
         Jcastillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/castillop.jpg"))); // NOI18N
+        Jcastillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JcastilloActionPerformed(evt);
+            }
+        });
 
         Jsuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/suelop.jpg"))); // NOI18N
+        Jsuelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JsueloActionPerformed(evt);
+            }
+        });
 
         Jpared.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/paredp.jpg"))); // NOI18N
+        Jpared.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JparedActionPerformed(evt);
+            }
+        });
 
         Jkoopa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tortugap.jpg"))); // NOI18N
+        Jkoopa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JkoopaActionPerformed(evt);
+            }
+        });
 
         Jgoomba1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/goombap.jpg"))); // NOI18N
+        Jgoomba1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jgoomba1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -103,87 +156,75 @@ public class Cargar extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(Jsuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Jcastillo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(Jhongo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(84, 84, 84)
-                                    .addComponent(Jpared, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(Jmario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Jgoomba1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jtmario))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addGap(84, 84, 84)
-                                            .addComponent(Jkoopa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jttor, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(Jficha, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jtho, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(84, 84, 84)
-                                .addComponent(jtpa)))
-                        .addContainerGap())
+                        .addComponent(Jmario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(Jkoopa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtgoo)
-                            .addComponent(jtsu, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addComponent(jtca))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtmo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                        .addComponent(jtmario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(jttor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Jgoomba1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(Jficha, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jtgoo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
+                        .addComponent(jtmo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Jhongo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(Jpared, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jtho, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(jtpa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Jsuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(Jcastillo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jtsu, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(jtca, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Jkoopa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Jmario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Jmario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Jkoopa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jttor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtmario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtmario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jttor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Jgoomba1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Jficha, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtgoo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtmo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Jhongo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Jpared, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Jhongo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Jpared, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtpa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(Jsuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(Jcastillo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                    .addComponent(Jsuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(Jcastillo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                    .addComponent(jtca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         Jcargar.setText("CARGAR");
@@ -198,27 +239,25 @@ public class Cargar extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Jcargar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(755, 755, 755)
+                        .addComponent(Jcargar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Jcargar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addGap(27, 27, 27)
+                        .addComponent(Jcargar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -226,46 +265,111 @@ public class Cargar extends javax.swing.JFrame {
 
     private void JcargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JcargarActionPerformed
         // TODO add your handling code here:
-        Juego ju = new Juego();
-        ju.setVisible(true);
+      JuegoM ju = new JuegoM();
+      ju.setVisible(true);
+      
     }//GEN-LAST:event_JcargarActionPerformed
 
     private void JmarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmarioActionPerformed
-        // TODO add your handling code here:
-        ListaDoble listaD = new ListaDoble();
-        this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\mariopp.jpg",
-            "MARIO", this.jtmario);
-    listaD.AgregaralInicio(new Elemento(this.jtmario.getText(),"MARIO"));
+    if(a== true){    
+    this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\mariopp.jpg",
+    "MARIO", this.jtmario);
+    listaD.AgregaralInicio(new Elemento(10,30,this.jtmario.getText(),"MARIO")); 
+    
+   }else{
+       JOptionPane.showMessageDialog(null, "Su personaje principal ya fue agregado","ERROR",JOptionPane.ERROR_MESSAGE);
+   } 
+   a=false;
     }//GEN-LAST:event_JmarioActionPerformed
+
+    private void JkoopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JkoopaActionPerformed
+        // TODO add your handling code here:
+        
+        this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\tortugap.jpg",
+            "TORTUGA", this.jttor);
+   listaD.AgregaralInicio(new Elemento(10,30,this.jttor.getText(),"TORTUGA"));
+    }//GEN-LAST:event_JkoopaActionPerformed
+
+    private void Jgoomba1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jgoomba1ActionPerformed
+        // TODO add your handling code here:
+         
+        this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\goombap.jpg",
+            "GOOMBA", this.jtgoo);
+   listaD.AgregaralInicio(new Elemento(10,30,this.jtgoo.getText(),"GOOMBA"));
+    }//GEN-LAST:event_Jgoomba1ActionPerformed
+
+    private void JfichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JfichaActionPerformed
+        // TODO add your handling code here:
+         
+        this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\monedap.png",
+            "MONEDA", this.jtmo);
+   listaD.AgregaralInicio(new Elemento(10,30,this.jtmo.getText(),"MONEDA"));
+    }//GEN-LAST:event_JfichaActionPerformed
+
+    private void JhongoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JhongoActionPerformed
+        // TODO add your handling code here:
+         
+        this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\hongop.jpg",
+            "HONGO", this.jtho);
+   listaD.AgregaralInicio(new Elemento(10,30,this.jtho.getText(),"HONGO"));
+    }//GEN-LAST:event_JhongoActionPerformed
+
+    private void JparedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JparedActionPerformed
+        // TODO add your handling code here:
+         
+        this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\paredp.jpg",
+            "PARED", this.jtpa);
+   listaD.AgregaralInicio(new Elemento(10,30,this.jtpa.getText(),"PARED"));
+    }//GEN-LAST:event_JparedActionPerformed
+
+    private void JsueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JsueloActionPerformed
+        // TODO add your handling code here:
+       
+        this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\suelop.jpg",
+            "SUELO", this.jtsu);
+   listaD.AgregaralInicio(new Elemento(10,30,this.jtsu.getText(),"SUELO"));
+    }//GEN-LAST:event_JsueloActionPerformed
+
+    private void JcastilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JcastilloActionPerformed
+        // TODO add your handling code here:
+      if(c == true){  
+        this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\castillop.jpg",
+            "CASTILLO", this.jtca);
+   listaD.AgregaralInicio(new Elemento(10,30,this.jtca.getText(),"CASTILLO"));
+   }else{
+       JOptionPane.showMessageDialog(null, "El castillo ya fue agregado","ERROR",JOptionPane.ERROR_MESSAGE);
+   } 
+         c=false;
+    }//GEN-LAST:event_JcastilloActionPerformed
 
     public void agregar(String ruta, String tipoObj, JTextField cuadro)
 {
-    int contador=0;
+    
     ImageIcon ii = new ImageIcon(ruta);
     JLabel imagen = new JLabel();
     imagen.setIcon(ii);
-    imagen.setBounds(50, 50 + (contador * 50), 32, 32);
+    imagen.setBounds(10, 50 + (contador * 70), 60, 60);
     this.jPanel1.add(imagen);
 
     
     JLabel tipo = new JLabel();
     tipo.setText(tipoObj);
-    tipo.setBounds(125, 50 + (contador * 50), 60, 32);
+    tipo.setBounds(10, 50 + (contador * 70), 60, 32);
     this.jPanel1.add(tipo);
     
     JLabel nombre = new JLabel();
     nombre.setText(cuadro.getText());
-    nombre.setBounds(200, 50 + (contador * 50), 150, 32);
+    nombre.setBounds(100, 50 + (contador * 70), 150, 32);
     this.jPanel1.add(nombre);
     
     JButton cambiar = new JButton();  
     cambiar.setText("Renombrar");
-    cambiar.setBounds(325, 50 + (contador * 50), 100, 32);
+    cambiar.setBounds(325, 50 + (contador * 70), 100, 32);
     this.jPanel1.add(cambiar);
     
     JButton eliminar = new JButton();  
     eliminar.setText("Eliminar");
-    eliminar.setBounds(475, 50 + (contador * 50), 100, 32);
+    eliminar.setBounds(475, 50 + (contador * 70), 100, 32);
     this.jPanel1.add(eliminar);
  
     
@@ -273,7 +377,7 @@ public class Cargar extends javax.swing.JFrame {
     this.jPanel1.repaint();  
     
     
-    jPanel1.setPreferredSize(new Dimension(650,300 + (contador * 50)));
+    jPanel1.setPreferredSize(new Dimension(650,300 + (contador * 70)));
     
     contador++; 
     
@@ -329,7 +433,6 @@ public class Cargar extends javax.swing.JFrame {
     private javax.swing.JButton Jsuelo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField jtca;
     private javax.swing.JTextField jtgoo;
     private javax.swing.JTextField jtho;

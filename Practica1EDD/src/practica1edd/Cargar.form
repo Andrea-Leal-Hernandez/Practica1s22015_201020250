@@ -23,132 +23,102 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="13" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="755" pref="755" max="-2" attributes="0"/>
                       <Component id="Jcargar" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
                       <Component id="Jcargar" min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="896" max="32767" attributes="0"/>
-                  <Component id="jScrollBar1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="0" pref="891" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="jScrollBar1" min="-2" pref="401" max="-2" attributes="0"/>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="0" pref="440" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JScrollBar" name="jScrollBar1">
-        </Component>
-      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="Jsuelo" min="-2" pref="60" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="Jcastillo" min="-2" pref="60" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="Jhongo" min="-2" pref="60" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                      <Component id="Jpared" min="-2" pref="60" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Jmario" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="Jgoomba1" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="jtmario" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                              <Component id="Jkoopa" min="-2" pref="60" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jttor" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="Jficha" min="-2" pref="60" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jtho" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                  <Component id="jtpa" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="10" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="Jmario" min="-2" pref="60" max="-2" attributes="0"/>
+                          <EmptySpace min="84" pref="84" max="-2" attributes="0"/>
+                          <Component id="Jkoopa" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtgoo" max="32767" attributes="0"/>
-                              <Component id="jtsu" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                  <Component id="jtca" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jtmo" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jtmario" min="-2" pref="60" max="-2" attributes="0"/>
+                          <EmptySpace min="84" pref="84" max="-2" attributes="0"/>
+                          <Component id="jttor" min="-2" pref="60" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="Jgoomba1" min="-2" pref="60" max="-2" attributes="0"/>
+                          <EmptySpace min="84" pref="84" max="-2" attributes="0"/>
+                          <Component id="Jficha" min="-2" pref="60" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jtgoo" min="-2" pref="65" max="-2" attributes="0"/>
+                          <EmptySpace min="79" pref="79" max="-2" attributes="0"/>
+                          <Component id="jtmo" min="-2" pref="60" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="Jhongo" min="-2" pref="60" max="-2" attributes="0"/>
+                          <EmptySpace min="84" pref="84" max="-2" attributes="0"/>
+                          <Component id="Jpared" min="-2" pref="60" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jtho" min="-2" pref="60" max="-2" attributes="0"/>
+                          <EmptySpace min="84" pref="84" max="-2" attributes="0"/>
+                          <Component id="jtpa" min="-2" pref="60" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="Jsuelo" min="-2" pref="60" max="-2" attributes="0"/>
+                          <EmptySpace min="84" pref="84" max="-2" attributes="0"/>
+                          <Component id="Jcastillo" min="-2" pref="60" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jtsu" min="-2" pref="65" max="-2" attributes="0"/>
+                          <EmptySpace min="84" pref="84" max="-2" attributes="0"/>
+                          <Component id="jtca" min="-2" pref="65" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -157,52 +127,49 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="48" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Jkoopa" min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="Jmario" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="Jkoopa" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jttor" min="-2" max="-2" attributes="0"/>
                       <Component id="jtmario" min="-2" max="-2" attributes="0"/>
+                      <Component id="jttor" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Jgoomba1" min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="Jficha" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtgoo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtmo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Jhongo" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="Jpared" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="jtgoo" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtmo" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtho" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtpa" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="Jsuelo" min="-2" pref="60" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
+                      <Component id="Jhongo" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="Jpared" min="-2" pref="60" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jtho" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtpa" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="Jsuelo" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Component id="Jcastillo" min="-2" pref="60" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jtsu" min="-2" max="-2" attributes="0"/>
                       <Component id="jtca" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -224,6 +191,9 @@
               <Image iconType="3" name="/imagenes/monedap.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JfichaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Jhongo">
           <Properties>
@@ -231,6 +201,9 @@
               <Image iconType="3" name="/imagenes/hongop.jpg"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JhongoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Jcastillo">
           <Properties>
@@ -238,6 +211,9 @@
               <Image iconType="3" name="/imagenes/castillop.jpg"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JcastilloActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Jsuelo">
           <Properties>
@@ -245,6 +221,9 @@
               <Image iconType="3" name="/imagenes/suelop.jpg"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JsueloActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Jpared">
           <Properties>
@@ -252,6 +231,9 @@
               <Image iconType="3" name="/imagenes/paredp.jpg"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JparedActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Jkoopa">
           <Properties>
@@ -259,6 +241,9 @@
               <Image iconType="3" name="/imagenes/tortugap.jpg"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JkoopaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Jgoomba1">
           <Properties>
@@ -266,6 +251,9 @@
               <Image iconType="3" name="/imagenes/goombap.jpg"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Jgoomba1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtho">
         </Component>

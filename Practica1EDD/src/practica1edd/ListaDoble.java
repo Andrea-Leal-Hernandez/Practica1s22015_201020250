@@ -5,7 +5,13 @@
  */
 package practica1edd;
 
+import java.io.File;
+import java.io.PrintWriter;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -13,7 +19,8 @@ import javax.swing.JOptionPane;
  */
 public class ListaDoble {
     private NodoDoble inicio, fin;
- 
+    
+     
     public ListaDoble () {
         inicio = fin = null;  
     }
@@ -22,7 +29,7 @@ public class ListaDoble {
         return inicio == null;
     }
     
-    public void AgregaralFinal(int el){
+    public void AgregaralFinal(Elemento el){
         if(!estVacia()){
             fin = new NodoDoble(el, null, fin);
             fin.siguiente.anterior= fin;
@@ -31,7 +38,7 @@ public class ListaDoble {
         }
     }
     
-    public void AgregaralInicio(int el){
+    public void AgregaralInicio(Elemento el){
         if(!estVacia()){
             inicio = new NodoDoble(el, inicio, null);
             inicio.siguiente.anterior = inicio;
@@ -45,7 +52,7 @@ public class ListaDoble {
             String datos = "<=>";
             NodoDoble auxiliar = inicio;
            while(auxiliar!=null){
-               datos = datos + "["+ auxiliar.dato+"]<=>";
+               datos = datos + "["+ auxiliar.es+"]<=>";
                auxiliar = auxiliar.siguiente;
            } 
            JOptionPane.showMessageDialog(null, datos,"Mostrando Lista de Principio a Fin",
@@ -59,7 +66,7 @@ public class ListaDoble {
             String datos = "<=>";
             NodoDoble auxiliar = fin;
            while(auxiliar!=null){
-               datos = datos + "["+ auxiliar.dato+"]<=>";
+               datos = datos + "["+ auxiliar.es+"]<=>";
                auxiliar = auxiliar.anterior;
            } 
            JOptionPane.showMessageDialog(null, datos,"Mostrando Lista de Fin a Principio",
@@ -68,6 +75,112 @@ public class ListaDoble {
             
         }
     
+     
+    public String Grafhicar(){
+    String hola = "";
+    int contador = 1;
+    NodoDoble aux = fin;
+    String sig = "";
+    String ant = "";
     
+   
+    while(aux!=null){
+       hola = hola + contador + "[label ="+ aux.es.nombre+ aux.es.tipo+"];\n";
+       System.out.println(aux.es.nombre);
+       aux = aux.anterior;
+        contador ++;
+       }
+    System.out.println(hola);
+    contador --;
+    for (int l=1 ; l<contador;){
+       sig = sig + l +"->"+ ++l+";\n"; 
+    }
+    System.out.println(sig);
+    for(int l=1; l< contador;){
+        ant = ant +contador+ "->" + (--contador)+";\n";
+    }
+    System.out.println("digraph G{\n"+ hola+ sig + ant +"}");
+    System.out.println(ant); 
+    return "digraph G{\n"+ hola+ sig + ant +"}";
+                  
+}
+    
+   public void CargaObjetos(JPanel jPanelCargar){
+     int contador =0;
+      NodoDoble temporal = inicio;
+     int contar = 50;
+     while(temporal!=null){
+         if(temporal.es.tipo==("MARIO")){
+         ImageIcon ima = new ImageIcon("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\mario_1.png");
+         temporal.setIcon(ima);
+         temporal.setBounds(18, 25+contador*contar, 40,40);
+         jPanelCargar.add(temporal);
+         jPanelCargar.repaint();
+         
+         contador ++;
+         
+         } else if(temporal.es.tipo==("HONGO")){
+         ImageIcon img = new ImageIcon("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\hongo22.jpg");
+         temporal.setIcon(img);
+         temporal.setBounds(10,25+contador*contar, 40, 40);
+         jPanelCargar.add(temporal);
+         jPanelCargar.repaint();
+         contador ++;
+         
+         } else if(temporal.es.tipo==("PARED")){
+         ImageIcon img = new ImageIcon("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\pared2.jpg");
+         temporal.setIcon(img);
+         temporal.setBounds(10, 25+contador*contar,40,40);
+         jPanelCargar.add(temporal);
+         jPanelCargar.repaint();
+         contador ++;
+         
+         }else if(temporal.es.tipo==("TORTUGA")){
+         ImageIcon img = new ImageIcon("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\tortuga.jpg");
+         temporal.setIcon(img);
+         temporal.setBounds(10, 25+contador*contar,40,40);
+         jPanelCargar.add(temporal);
+         jPanelCargar.repaint();
+         contador ++;
+         
+         }else if(temporal.es.tipo==("MONEDA")){
+         ImageIcon img = new ImageIcon("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\fichaa.jpg");
+         temporal.setIcon(img);
+         temporal.setBounds(10, 25+contador*contar,  40,40);
+         jPanelCargar.add(temporal);
+         jPanelCargar.repaint();
+         contador ++;
+         
+         }else if(temporal.es.tipo==("CASTILLO")){
+         ImageIcon img = new ImageIcon("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\castillo2.jpg");
+         temporal.setIcon(img);
+         temporal.setBounds(10, 25+contador*contar, 40, 40);
+         jPanelCargar.add(temporal);
+         jPanelCargar.repaint();
+         contador ++;
+         
+         }else if(temporal.es.tipo==("GOOMBA")){
+         ImageIcon img = new ImageIcon("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\goomba2.jpg");
+         temporal.setIcon(img);
+         temporal.setBounds( 10, 25+contador*contar, 40, 40);
+         jPanelCargar.add(temporal);
+         jPanelCargar.repaint();
+         contador ++;
+         
+         }else if(temporal.es.tipo==("SUELO")){
+         ImageIcon img = new ImageIcon("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\suelo2.jpg");
+         temporal.setIcon(img);
+         temporal.setBounds(10, 25+contador*contar, 40, 40);
+         jPanelCargar.add(temporal);
+         jPanelCargar.repaint();
+         contador ++;
+         
+         }
+     temporal=temporal.siguiente;
+     }
+    
+    }
+     
+     
     }
 
