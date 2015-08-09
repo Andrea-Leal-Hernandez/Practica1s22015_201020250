@@ -9,18 +9,20 @@ package Matriz_Ortogonal;
  *
  * @author Andrea
  */
-public class NodoCabeza {
- 
+public class NodoLateral {
+    
     int x;
-    NodoCabeza siguiente;
-    NodoCabeza anterior;
+    NodoLateral siguiente;
+    NodoLateral anterior;
     ListaVertical columna;
     
-    NodoCabeza(int x){
+    NodoLateral(int x){
         this.x = x;
         columna = new ListaVertical();
         siguiente = null;
         anterior=null;
     }
+    
+    
     
 }

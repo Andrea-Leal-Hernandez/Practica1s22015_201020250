@@ -9,13 +9,13 @@ package Matriz_Ortogonal;
  *
  * @author Andrea
  */
-public class ListaVertical {
+public class ListaHorizontal {
     
-    NodoOrtogonal primera;
+     NodoOrtogonal primera;
     NodoOrtogonal ultima;
    
     
-    public ListaVertical(){
+    public ListaHorizontal(){
         primera = null;
         ultima = null;
     }
@@ -26,11 +26,11 @@ public class ListaVertical {
         }
         else{
             
-            if(inserta.y < primera.y){
+            if(inserta.x < primera.x){
               insertarInicio(inserta);  
                 
             }
-            else if(inserta.y > ultima.y){
+            else if(inserta.x > ultima.x){
               insertarFinal(inserta);  
             }
             else { 
@@ -45,16 +45,16 @@ public class ListaVertical {
     
     public void insertarInicio(NodoOrtogonal inserta){
        
-        primera.arriba=inserta;
-        inserta.abajo=primera;
-        primera = primera.arriba;
+        primera.izquierda=inserta;
+        inserta.derecha=primera;
+        primera = primera.izquierda;
     }
     
     public void insertarFinal(NodoOrtogonal inserta){
        
-        ultima.abajo = inserta;
-        inserta.arriba = ultima;
-        ultima= ultima.abajo;
+        ultima.derecha = inserta;
+        inserta.izquierda = ultima;
+        ultima= ultima.derecha;
     }
     
      public void insertarenMedio(NodoOrtogonal inserta){
@@ -62,14 +62,14 @@ public class ListaVertical {
          NodoOrtogonal temp1;
          NodoOrtogonal temp2;
          temp1 = primera;
-         while(temp1.y < inserta.y){
-             temp1 = temp1.abajo;
+         while(temp1.x < inserta.x){
+             temp1 = temp1.derecha;
          }
-         temp2 = temp1.arriba;
-         temp2.abajo = inserta;
-         temp1.arriba= inserta;
-         inserta.abajo= temp1;
-         inserta.arriba=temp2;
+         temp2 = temp1.izquierda;
+         temp2.derecha = inserta;
+         temp1.izquierda= inserta;
+         inserta.derecha= temp1;
+         inserta.izquierda=temp2;
     }
      
      public void Recorrer(){
@@ -77,10 +77,14 @@ public class ListaVertical {
            NodoOrtogonal tempo;
            tempo = primera;
        while(tempo!=null){
-           System.out.println(tempo.y);
+           System.out.println(tempo.x);
            tempo = tempo.abajo;
        }
        }
         
     }
+    
+    
+    
+    
 }

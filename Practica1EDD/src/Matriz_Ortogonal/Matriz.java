@@ -13,22 +13,11 @@ public class Matriz {
     
     
 
-    public void ListaVertical(){
-        int x1;
-        
-        
-        
-    }
+   
     
     
     
-    public void NodoCabeza(){
-        int x1;
-        Matriz primera;
-        Matriz ultima;
-        
-        
-    }
+   
     
     
     
