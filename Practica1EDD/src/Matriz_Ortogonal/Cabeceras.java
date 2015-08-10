@@ -104,16 +104,17 @@ public class Cabeceras {
      }
      
      NodoCabeza busqueda(int x){
-         if(existe(x)){
-             NodoCabeza temporal;
-             temporal = primera;
-             
-             while(temporal.x! = x){
+         NodoCabeza temporal;
+         temporal = primera;
+         if(existe(x,temporal)){
+ 
+             while(temporal.x!=x){
                  temporal = temporal.siguiente;
              }
              return temporal;
          }else{
              return (new NodoCabeza(-1));
+             
          }  
      }
 }
