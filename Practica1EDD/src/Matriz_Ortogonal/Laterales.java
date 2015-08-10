@@ -82,4 +82,42 @@ public class Laterales {
        }
         
     }
+     
+        public boolean existe(int y, NodoLateral nodo){
+         
+         if(estaVacia()){
+             return false;
+         }else{
+           NodoLateral temporal;
+           temporal = primera;
+           while(temporal!=null){
+               if(temporal.y!=y){
+                   return true;
+               }
+               else if(temporal.siguiente==null){
+                   return false;
+               }
+               temporal = temporal.siguiente;
+           }
+             
+         }
+        return true; 
+     }
+     
+     NodoLateral busqueda(int y){
+         NodoLateral temporal;
+         temporal = primera;
+         if(existe(y,temporal)){
+ 
+             while(temporal.y!=y){
+                 temporal = temporal.siguiente;
+             }
+             return temporal;
+         }else{
+             return (new NodoLateral(-1));
+             
+         }  
+     }
 }
+
+

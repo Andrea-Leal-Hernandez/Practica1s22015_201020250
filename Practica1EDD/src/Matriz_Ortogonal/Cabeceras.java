@@ -90,7 +90,7 @@ public class Cabeceras {
            NodoCabeza temporal;
            temporal = primera;
            while(temporal!=null){
-               if(temporal.x==x){
+               if(temporal.x!=x){
                    return true;
                }
                else if(temporal.siguiente==null){
