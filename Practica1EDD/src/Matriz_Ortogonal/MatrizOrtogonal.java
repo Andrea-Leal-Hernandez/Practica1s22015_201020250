@@ -44,6 +44,7 @@ public class MatrizOrtogonal {
         
         for(int i=0; i<x; i++){
             insertar(i,j,o);
+            o++;
         }
     }
     }
