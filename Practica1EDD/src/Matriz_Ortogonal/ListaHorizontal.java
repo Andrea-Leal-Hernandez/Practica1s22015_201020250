@@ -78,7 +78,7 @@ public class ListaHorizontal {
            tempo = primera;
        while(tempo!=null){
            System.out.println(tempo.x);
-           tempo = tempo.abajo;
+           tempo = tempo.izquierda;
        }
        }
         

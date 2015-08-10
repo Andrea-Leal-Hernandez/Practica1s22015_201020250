@@ -11,14 +11,14 @@ package Matriz_Ortogonal;
  */
 public class NodoLateral {
     
-    int x;
+    int y;
     NodoLateral siguiente;
     NodoLateral anterior;
-    ListaVertical columna;
+    ListaHorizontal fila;
     
-    NodoLateral(int x){
-        this.x = x;
-        columna = new ListaVertical();
+    NodoLateral(int y){
+        this.y = y;
+        fila = new ListaHorizontal();
         siguiente = null;
         anterior=null;
     }
