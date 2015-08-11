@@ -19,7 +19,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class ListaDoble {
     NodoDoble inicio, fin;
-    
+    boolean comparacion;
      
     public ListaDoble () {
         inicio = fin = null;  
@@ -94,6 +94,18 @@ public class ListaDoble {
         }
              }
      
+      public void pilacola(){
+        if(comparacion==true){
+            Cargar.listaD.EliminarFinal();
+            System.out.println(Cargar.listaD);
+                    
+        }else{
+            Cargar.listaD.eliminarInicio();
+            System.out.println(Cargar.listaD);
+        }
+     }
+        
+        
     public String Grafhicar(){
     String hola = "";
     int contador = 1;

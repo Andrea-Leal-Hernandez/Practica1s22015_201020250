@@ -19,7 +19,12 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
         setLocationRelativeTo(null);
+        
+       
+        
     }
+    
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,6 +75,7 @@ public class Inicio extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          Cargar ca = new Cargar();
           ca.setVisible(true);
+          this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

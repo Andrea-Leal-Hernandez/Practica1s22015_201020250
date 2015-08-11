@@ -39,6 +39,7 @@ public class Cargar extends javax.swing.JFrame {
         getContentPane().add(es);
         this.setBounds(50, 50, 1200, 600);
         setLocationRelativeTo(null);
+       
   
     }
     
@@ -80,8 +81,10 @@ public class Cargar extends javax.swing.JFrame {
         jtca = new javax.swing.JTextField();
         jtmo = new javax.swing.JTextField();
         Jcargar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setToolTipText("");
 
@@ -95,6 +98,9 @@ public class Cargar extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 440, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(10, 22, 891, 440);
 
         Jmario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mariopp.jpg"))); // NOI18N
         Jmario.addActionListener(new java.awt.event.ActionListener() {
@@ -231,38 +237,21 @@ public class Cargar extends javax.swing.JFrame {
                     .addComponent(jtca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(925, 22, 244, 509);
+
         Jcargar.setText("CARGAR");
         Jcargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JcargarActionPerformed(evt);
             }
         });
+        getContentPane().add(Jcargar);
+        Jcargar.setBounds(765, 489, 108, 53);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(755, 755, 755)
-                        .addComponent(Jcargar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(Jcargar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo1.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1170, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -273,6 +262,7 @@ public class Cargar extends javax.swing.JFrame {
         // TODO add your handling code here:
       JuegoM ju = new JuegoM();
       ju.setVisible(true); 
+      this.dispose();
     }//GEN-LAST:event_JcargarActionPerformed
 
     private void JmarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmarioActionPerformed
@@ -396,20 +386,20 @@ public class Cargar extends javax.swing.JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-             JOptionPane.showMessageDialog(null, "Eliminado");
-                 
-                 if(ayuda==listaD.inicio){
-                  listaD.eliminarInicio();
-                 
-                 } else if(ayuda==listaD.fin){
-                 
-                 listaD.EliminarFinal();
-                 
-                 } else{
-                 
-                 listaD.eliminarMedio(ayuda);
-                 
-                 }
+//             JOptionPane.showMessageDialog(null, "Eliminado");
+//                 
+//                 if(ayuda==listaD.inicio){
+//                  listaD.eliminarInicio();
+//                 
+//                 } else if(ayuda==listaD.fin){
+//                 
+//                 listaD.EliminarFinal();
+//                 
+//                 } else{
+//                 
+//                 listaD.eliminarMedio(ayuda);
+//                 
+//                 }
                  
                  
             }
@@ -470,6 +460,7 @@ public class Cargar extends javax.swing.JFrame {
     private javax.swing.JButton Jmario;
     private javax.swing.JButton Jpared;
     private javax.swing.JButton Jsuelo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jtca;
