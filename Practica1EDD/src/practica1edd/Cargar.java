@@ -385,22 +385,7 @@ public class Cargar extends javax.swing.JFrame {
     eliminar.addActionListener(new ActionListener() {
 
         @Override
-        public void actionPerformed(ActionEvent e) {
-//             JOptionPane.showMessageDialog(null, "Eliminado");
-//                 
-//                 if(ayuda==listaD.inicio){
-//                  listaD.eliminarInicio();
-//                 
-//                 } else if(ayuda==listaD.fin){
-//                 
-//                 listaD.EliminarFinal();
-//                 
-//                 } else{
-//                 
-//                 listaD.eliminarMedio(ayuda);
-//                 
-//                 }
-                 
+        public void actionPerformed(ActionEvent e) {   
                  
             }
         });

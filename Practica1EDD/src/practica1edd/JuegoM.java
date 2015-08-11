@@ -28,7 +28,7 @@ public class JuegoM extends javax.swing.JFrame {
     }
     
     boolean comparacion;
-    
+    String name = "";
     
     
     
@@ -278,7 +278,24 @@ public class JuegoM extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        Cargar.listaD.pilacola();
+       if(comparacion ==true)
+        {
+            name = Cargar.listaD.inicio.es.nombre;
+            
+            Cargar.listaD.eliminarInicio();
+            JOptionPane.showMessageDialog(null, "se ha agregado" + name);
+            System.out.println(name);
+            
+        }else
+        {
+            name = Cargar.listaD.fin.es.nombre;
+           
+            Cargar.listaD.EliminarFinal();
+            
+            JOptionPane.showMessageDialog(null, "se ha agregado" + name);
+            System.out.println(name);
+            
+        }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
