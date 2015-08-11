@@ -23,6 +23,7 @@ public class JuegoM extends javax.swing.JFrame {
      */
     public JuegoM() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
    
@@ -30,9 +31,9 @@ public class JuegoM extends javax.swing.JFrame {
     
     
     
-     public void graficar (String texto)
+     public void graficar (String palabra)
 {
-    if(texto.matches("[[ ]*[\n]*[\t]]*"))
+    if(palabra.matches("[[ ]*[\n]*[\t]]*"))
         {
             JOptionPane.showMessageDialog(null, "no hay texto para guardar!", "ERROR", JOptionPane.ERROR_MESSAGE);
         }else{
@@ -45,7 +46,7 @@ public class JuegoM extends javax.swing.JFrame {
                    File f = guardar.getSelectedFile();
                    String path = f.getAbsolutePath();
                    PrintWriter pw = new PrintWriter(f);
-                   pw.print(texto);
+                   pw.print(palabra);
                    pw.close();
                    
                    if(!(path.endsWith(".txt"))){
@@ -104,6 +105,7 @@ public class JuegoM extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanelCargar = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,6 +153,13 @@ public class JuegoM extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Jugar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -174,6 +183,8 @@ public class JuegoM extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)
+                        .addGap(43, 43, 43)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44))))
@@ -189,7 +200,8 @@ public class JuegoM extends javax.swing.JFrame {
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelCargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -211,6 +223,12 @@ public class JuegoM extends javax.swing.JFrame {
         // TODO add your handling code here:
         Cargar.listaD.CargaObjetos(jPanelCargar);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        Mario ma = new Mario();
+        ma.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,6 +272,7 @@ public class JuegoM extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelCargar;
     // End of variables declaration//GEN-END:variables

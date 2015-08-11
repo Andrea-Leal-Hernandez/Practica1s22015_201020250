@@ -18,7 +18,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author Andrea
  */
 public class ListaDoble {
-    private NodoDoble inicio, fin;
+    NodoDoble inicio, fin;
     
      
     public ListaDoble () {
@@ -75,6 +75,24 @@ public class ListaDoble {
             
         }
     
+     
+     void eliminarMedio(NodoDoble eliminar)
+    {
+        NodoDoble aux1 = eliminar.anterior;
+        NodoDoble aux2 = eliminar.siguiente;
+        aux1.siguiente = aux2;
+        aux2.anterior = aux1;
+
+    }
+     
+     void eliminarInicio(){
+             if(inicio == fin){
+            inicio = fin = null;
+        }else{
+            inicio = inicio.siguiente;
+            inicio.anterior = null;
+        }
+             }
      
     public String Grafhicar(){
     String hola = "";
@@ -181,6 +199,13 @@ public class ListaDoble {
     
     }
      
-     
+     public void EliminarFinal(){
+             if(inicio == fin){
+            inicio = fin = null;
+        }else{
+            fin = fin.anterior;
+            fin.siguiente = null;
+        }
+             }
     }
 

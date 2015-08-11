@@ -6,6 +6,8 @@
 package practica1edd;
 
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.PrintWriter;
 import javax.swing.ImageIcon;
@@ -36,6 +38,7 @@ public class Cargar extends javax.swing.JFrame {
         es.getViewport().setView(this.jPanel1);
         getContentPane().add(es);
         this.setBounds(50, 50, 1200, 600);
+        setLocationRelativeTo(null);
   
     }
     
@@ -43,6 +46,7 @@ public class Cargar extends javax.swing.JFrame {
      boolean a = true;
      boolean c = true;
      static ListaDoble listaD = new ListaDoble();
+     NodoDoble ayuda;
      
      
      
@@ -263,18 +267,21 @@ public class Cargar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void JcargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JcargarActionPerformed
         // TODO add your handling code here:
       JuegoM ju = new JuegoM();
-      ju.setVisible(true);
-      
+      ju.setVisible(true); 
     }//GEN-LAST:event_JcargarActionPerformed
 
     private void JmarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmarioActionPerformed
-    if(a== true){    
+    if(a== true){ 
+        
+        listaD.AgregaralInicio(new Elemento(10,30,this.jtmario.getText(),"MARIO"));
     this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\mariopp.jpg",
     "MARIO", this.jtmario);
-    listaD.AgregaralInicio(new Elemento(10,30,this.jtmario.getText(),"MARIO")); 
+     
     
    }else{
        JOptionPane.showMessageDialog(null, "Su personaje principal ya fue agregado","ERROR",JOptionPane.ERROR_MESSAGE);
@@ -284,58 +291,59 @@ public class Cargar extends javax.swing.JFrame {
 
     private void JkoopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JkoopaActionPerformed
         // TODO add your handling code here:
-        
+        listaD.AgregaralInicio(new Elemento(10,30,this.jttor.getText(),"TORTUGA"));
         this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\tortugap.jpg",
             "TORTUGA", this.jttor);
-   listaD.AgregaralInicio(new Elemento(10,30,this.jttor.getText(),"TORTUGA"));
+   
     }//GEN-LAST:event_JkoopaActionPerformed
 
     private void Jgoomba1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jgoomba1ActionPerformed
         // TODO add your handling code here:
-         
+         listaD.AgregaralInicio(new Elemento(10,30,this.jtgoo.getText(),"GOOMBA"));
         this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\goombap.jpg",
             "GOOMBA", this.jtgoo);
-   listaD.AgregaralInicio(new Elemento(10,30,this.jtgoo.getText(),"GOOMBA"));
+   
     }//GEN-LAST:event_Jgoomba1ActionPerformed
 
     private void JfichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JfichaActionPerformed
         // TODO add your handling code here:
-         
+         listaD.AgregaralInicio(new Elemento(10,30,this.jtmo.getText(),"MONEDA"));
         this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\monedap.png",
             "MONEDA", this.jtmo);
-   listaD.AgregaralInicio(new Elemento(10,30,this.jtmo.getText(),"MONEDA"));
+   
     }//GEN-LAST:event_JfichaActionPerformed
 
     private void JhongoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JhongoActionPerformed
         // TODO add your handling code here:
-         
+         listaD.AgregaralInicio(new Elemento(10,30,this.jtho.getText(),"HONGO"));
         this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\hongop.jpg",
             "HONGO", this.jtho);
-   listaD.AgregaralInicio(new Elemento(10,30,this.jtho.getText(),"HONGO"));
+   
     }//GEN-LAST:event_JhongoActionPerformed
 
     private void JparedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JparedActionPerformed
         // TODO add your handling code here:
-         
+        listaD.AgregaralInicio(new Elemento(10,30,this.jtpa.getText(),"PARED")); 
         this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\paredp.jpg",
             "PARED", this.jtpa);
-   listaD.AgregaralInicio(new Elemento(10,30,this.jtpa.getText(),"PARED"));
+   
     }//GEN-LAST:event_JparedActionPerformed
 
     private void JsueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JsueloActionPerformed
         // TODO add your handling code here:
-       
+       listaD.AgregaralInicio(new Elemento(10,30,this.jtsu.getText(),"SUELO"));
         this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\suelop.jpg",
             "SUELO", this.jtsu);
-   listaD.AgregaralInicio(new Elemento(10,30,this.jtsu.getText(),"SUELO"));
+   
     }//GEN-LAST:event_JsueloActionPerformed
 
     private void JcastilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JcastilloActionPerformed
         // TODO add your handling code here:
-      if(c == true){  
+      if(c == true){ 
+          listaD.AgregaralInicio(new Elemento(10,30,this.jtca.getText(),"CASTILLO"));
         this.agregar("C:\\Users\\Andrea\\Documents\\NetBeansProjects\\Practica1s22015EDD_201020250\\Practica1EDD\\src\\imagenes\\castillop.jpg",
             "CASTILLO", this.jtca);
-   listaD.AgregaralInicio(new Elemento(10,30,this.jtca.getText(),"CASTILLO"));
+   
    }else{
        JOptionPane.showMessageDialog(null, "El castillo ya fue agregado","ERROR",JOptionPane.ERROR_MESSAGE);
    } 
@@ -366,21 +374,52 @@ public class Cargar extends javax.swing.JFrame {
     cambiar.setText("Renombrar");
     cambiar.setBounds(325, 50 + (contador * 70), 100, 32);
     this.jPanel1.add(cambiar);
+    cambiar.addActionListener(new ActionListener() {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String cam =JOptionPane.showInputDialog(null,"Ingrese Nuevo Nombre","");
+               nombre.setText(cam);
+               ayuda.es.nombre=cam;
+              }
+          });
+       this.jPanel1.add(cambiar);
+    
+    
+  
     
     JButton eliminar = new JButton();  
     eliminar.setText("Eliminar");
     eliminar.setBounds(475, 50 + (contador * 70), 100, 32);
     this.jPanel1.add(eliminar);
- 
-    
-    this.repaint();
-    this.jPanel1.repaint();  
-    
-    
-    jPanel1.setPreferredSize(new Dimension(650,300 + (contador * 70)));
-    
+    eliminar.addActionListener(new ActionListener() {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+             JOptionPane.showMessageDialog(null, "Eliminado");
+                 
+                 if(ayuda==listaD.inicio){
+                  listaD.eliminarInicio();
+                 
+                 } else if(ayuda==listaD.fin){
+                 
+                 listaD.EliminarFinal();
+                 
+                 } else{
+                 
+                 listaD.eliminarMedio(ayuda);
+                 
+                 }
+                 
+                 
+            }
+        });
+        
+       
+      this.jPanel1.repaint();
+
+    jPanel1.setPreferredSize(new Dimension(650,300 + (contador * 50)));
     contador++; 
-    
 }
     
 
